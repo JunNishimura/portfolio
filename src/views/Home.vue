@@ -7,9 +7,8 @@
         <div class="navigation">
             <nav>
                 <ul>
-                    <li><a href="#">WORK</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">CONTACT</a></li>
+                    <li><router-link :to="{name: 'work'}">WORK</router-link></li>
+                    <li><router-link :to="{name: 'profile'}">PROFILE</router-link></li>
                 </ul>
             </nav>
         </div>
@@ -17,12 +16,9 @@
 </template>
 
 <style lang="scss">
-$bg-color: #ebf6f7;
-
 .home {
     width: 100vw;
     height: 100vh;
-    background-color: $bg-color;
     position: relative;
 }
 
@@ -58,15 +54,8 @@ $bg-color: #ebf6f7;
     font-size: 30px;
 
     ul li {
-        list-style: none;
-
         &:not(:last-child) {
             margin-bottom: -13px;
-        }
-
-        a {
-            color: #000;
-            text-decoration: none;
         }
     }
 }
