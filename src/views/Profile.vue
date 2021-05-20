@@ -2,7 +2,7 @@
     <div id="profile-page">
         <div class="profile"> 
             <div class="profile-image">
-                <img src="@/assets/images/profile.jpg">
+                <img src="@/assets/images/profile/profile.jpg">
             </div>
             <div class="self-intro">
                 <div class="name">
@@ -31,6 +31,8 @@ export default {
 </script>
 
 <style lang="scss">
+$text-secondary-color: #555;
+
 .profile {
     padding-top: 50px;
     padding-left: 81px; // 50 * 1.618
@@ -53,7 +55,7 @@ export default {
         // background-color: blue;
 
         p {
-            color: #555;
+            color: $text-secondary-color;
             line-height: 23px;
         }
 

@@ -5,7 +5,7 @@ import store from './store'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import './assets/sass/style.scss'
+import '@/assets/sass/style.scss'
 
 // fontawesome settings
 library.add(faFacebookSquare)
