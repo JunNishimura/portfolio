@@ -1,8 +1,8 @@
 <template>
     <div id="page-base">
-        <nav>
+        <nav class="page-nav">
             <ul>
-                <li><router-link :to="{name: 'work'}">WORK</router-link></li>
+                <li><router-link :to="{name: 'works'}">WORK</router-link></li>
                 <li><router-link :to="{name: 'profile'}">PROFILE</router-link></li>
             </ul>
         </nav>
@@ -13,13 +13,16 @@
 </template>
 
 <style lang="scss">
+$active-color: #ffffff99;
+$hover-color: #ffffffaa;
+
 #page-base {
     height: 100vh;
     width: 80vw;
     margin: 0 auto;
     // background-color: red;
 
-    nav {
+    .page-nav {
         height: 125px;
         display: flex;
         flex-direction: column-reverse;
@@ -35,6 +38,18 @@
                 text-align: center;
                 width: 100px;
                 line-height: 48px;
+
+                a {
+                    display: block;
+                }
+                
+                .router-link-active {
+                    background-color: $active-color;
+                }
+
+                &:hover {
+                    background-color: $hover-color;
+                }
             }
         }
     }

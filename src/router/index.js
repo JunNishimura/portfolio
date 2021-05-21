@@ -2,7 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import PageBase from '@/views/PageBase.vue'
 import Profile from '@/views/Profile.vue'
-import Work from '@/views/Work.vue'
+import WorkList from '@/views/WorkList.vue'
+// work pages below
+import WordIsMine from '@/views/work/WordIsMine.vue'
 
 const routes = [
     {
@@ -21,9 +23,14 @@ const routes = [
                 component: Profile
             },
             {
-                path: '/work',
-                name: 'work',
-                component: Work
+                path: 'works',
+                name: 'works',
+                component: WorkList,
+            },
+            {
+                path: 'works/word-is-mine',
+                name: 'word-is-mine',
+                component: WordIsMine
             }
         ]
     },

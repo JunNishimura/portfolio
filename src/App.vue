@@ -16,12 +16,12 @@ body {
 }
 
 h1 {
-    font-family: 'LibreCalson';
+    font-family: 'LibreCalson', sans-serif;
     font-weight: bold;
 }
 
 h2, h3, h4, h5, p, a {
-    font-family: 'LibreCalson';
+    font-family: 'LibreCalson', '游明朝', '游明朝体', sans-serif;
     font-weight: normal;
 }
 
