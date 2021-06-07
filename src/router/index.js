@@ -5,6 +5,7 @@ import Profile from '@/views/Profile.vue'
 import WorkList from '@/views/WorkList.vue'
 // work pages below
 import WordIsMine from '@/views/work/WordIsMine.vue'
+import ComeTrue from '@/views/work/ComeTrue.vue'
 
 const routes = [
     {
@@ -31,6 +32,11 @@ const routes = [
                 path: 'works/word-is-mine',
                 name: 'word-is-mine',
                 component: WordIsMine
+            },
+            {
+                path: 'works/cometrue',
+                name: 'cometrue',
+                component: ComeTrue,
             }
         ]
     },
