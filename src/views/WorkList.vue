@@ -2,13 +2,13 @@
     <div id="work">
         <div class="gallery">
             <work-article
-                :path="'work/word-is-mine/P2051574.jpg'"
+                :path="'word-is-mine/P2051574.jpg'"
                 :title="'WORD IS MINE'"
                 :tag="'art'"
                 :pageName="'word-is-mine'"
             />
             <work-article
-                :path="'work/cometrue/home.png'"
+                :path="'cometrue/home.png'"
                 :title="'カムトル'"
                 :tag="'web app'"
                 :pageName="'cometrue'"
@@ -28,11 +28,13 @@ export default {
 </script>
 
 <style lang="scss">
-.gallery {
-    padding-top: 25px;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    justify-content: space-around;
+#work {
+    .gallery {
+        padding-top: 25px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        justify-content: space-around;
+    }
 }
 </style>

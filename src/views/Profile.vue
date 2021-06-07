@@ -16,8 +16,9 @@
                 </div>
                 <div class="contacts">
                     <p>I love to make cool things together with friends.<br>Please contact me if you're interested.</p>
-                    <div class="facebook-icon">
+                    <div class="sns">
                         <a href="https://www.facebook.com/jun.nishimura.3958"><font-awesome-icon :icon="['fab', 'facebook-square']" size="2x" :style="{ color: '#4267B2' }" /></a>
+                        <a href="https://www.instagram.com/jundayo0303/"><font-awesome-icon class="instagram-icon" :icon="['fab', 'instagram-square']" size="2x"  /></a>
                     </div>
                 </div>
             </div>
@@ -52,7 +53,6 @@ $text-secondary-color: #555;
         margin-left: 148px; // 240 / 1.618
         text-align: left;
         width: 388px; // 240 * 1.618
-        // background-color: blue;
 
         p {
             color: $text-secondary-color;
@@ -70,8 +70,22 @@ $text-secondary-color: #555;
         .contacts {
             margin-top:  22px;
 
-            .facebook-icon {
+            .sns {
                 margin-top: 25px;
+                display: flex;
+                justify-content: flex-start;
+
+                a {
+                    margin-right: 13.6px; // 22 / 1.618
+                }
+
+                .instagram-icon {
+                    font-size:30px;
+                    color: #d6249f;
+                    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent; 
+                }
             }
         }
     }

@@ -16,3 +16,9 @@
     font-style: normal;
     font-weight: bold;
 }
+
+@font-face {
+    font-family: number;
+    src: local('Hiragino Mincho ProN');
+    unicode-range: U+0030-0039;
+  }

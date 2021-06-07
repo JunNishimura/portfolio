@@ -9,15 +9,20 @@
 
 <script>
 export default {
-    props: ["path", "title", "tag", "pageName"],
+    props: {
+        path: String, 
+        title: String, 
+        tag: String,
+        pageName: String
+    },
     computed: {
         imgSrc() {
-            return require(`@/assets/images/${this.path}`); // @は予め書いておく方が良いみたい。@の部分までpropで渡すとエラーになる。
+            return require(`@/assets/images/work/${this.path}`); // @は予め書いておく方が良いみたい。@の部分までpropで渡すとエラーになる。
         }
     },
     methods: {
         pageTransit() {
-            this.$router.push({ name: this.pageName})
+            this.$router.push({ name: this.pageName })
         }
     }
 }
