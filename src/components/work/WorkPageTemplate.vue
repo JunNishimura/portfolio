@@ -38,10 +38,9 @@
                 ></iframe>
             </div>
             <div class="images">
-
+                <slot name="imageGallery"></slot>
             </div>
         </div>
-
     </div>
 </template>
 
@@ -156,7 +155,7 @@ export default {
     .gallery {
         margin-top: 36px; // 上に合わせる
         width: 100%;
-        
+
         .videos {
             iframe {
                 width: 100%;

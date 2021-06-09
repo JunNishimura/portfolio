@@ -15,16 +15,24 @@
                 <img src="@/assets/images/work/word-is-mine/twitter.png">
                 <p>本作は「ハイブリッドアート演習」という授業の一環として制作した。学群横断科目ということもあり芸術学群2人、情報学群2人の計4人で制作した。自分は主にシステムの実装を担当した。入力インターフェースから映像出力まで全てweb上に実装した。アプリケーションはHeroku上にデプロイして公開した。ユーザー入力に応じた映像出力の切り替えに関しては入力が変化する度に対応する動画を探して切り替えている。本作品ではユーザーの入力と映像切り替えにリアルタイム性が求められたため、WebSocketを簡単に扱う事のできるライブラリsocket.ioを活用した。また自動ツイートに関してはライブラリnode-twitterを利用した。</p>
             </template>
+            <template #imageGallery>
+                <image-gallery-template
+                    :imagePaths1="imagePaths.imagePaths1"
+                    :imagePaths2="imagePaths.imagePaths2"
+                />    
+            </template>
         </work-page-template>
     </div>
 </template>
 
 <script>
 import WorkPageTemplate from '@/components/work/WorkPageTemplate.vue'
+import ImageGalleryTemplate from '@/components/work/ImageGalleryTemplate.vue'
 
 export default {
     components: {
-        WorkPageTemplate
+        WorkPageTemplate,
+        ImageGalleryTemplate
     },
     data() {
         return {
@@ -53,6 +61,18 @@ export default {
                     "https://www.youtube.com/embed/svFS7zr6jAA"
                 ]
             },
+            imagePaths: {
+                imagePaths1: {
+                    imageA: "work/word-is-mine/P2051593.jpg",
+                    imageB: "work/word-is-mine/P2051604.jpg",
+                    imageC: "work/word-is-mine/P2051618.jpg",
+                },
+                imagePaths2: {
+                    imageA: "work/word-is-mine/P2051585.jpg",
+                    imageB: "work/word-is-mine/P2051583.jpg",
+                    imageC: "work/word-is-mine/P2051592.jpg"
+                }
+            }
         }
     },
 }
