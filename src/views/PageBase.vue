@@ -20,7 +20,6 @@ $hover-color: #ffffffaa;
     height: 100vh;
     width: 80vw;
     margin: 0 auto;
-    // background-color: red;
 
     .page-nav {
         height: 125px;

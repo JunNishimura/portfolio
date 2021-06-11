@@ -3,10 +3,16 @@
 </template>
 
 <style lang="scss">
-$bg-color: #ebf6f7;
-
 body {
     background-color: $bg-color;
+
+    @include respond(tablet) {
+        font-size: 87.5%; // 1rem == 14px
+    }
+
+    @include respond(phone) {
+        font-size: 75%; // 1rem == 12px
+    }
 }
 
 * {

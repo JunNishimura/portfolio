@@ -39,6 +39,11 @@ $text-secondary-color: #555;
     padding-left: 81px; // 50 * 1.618
     display: flex;
     justify-content: flex-start;
+    @include respond(tablet) {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+    }
 
     .profile-image {
         max-width: 240px;
@@ -52,7 +57,12 @@ $text-secondary-color: #555;
     .self-intro {
         margin-left: 148px; // 240 / 1.618
         text-align: left;
-        width: 388px; // 240 * 1.618
+        max-width: 388px; // 240 * 1.618
+        @include respond(tablet) {
+            margin-top: 58.25px; // 36 * 1.618
+            margin-left: 0;
+            max-width: 100%;
+        }
 
         p {
             color: $text-secondary-color;

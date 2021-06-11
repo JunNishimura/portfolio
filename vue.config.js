@@ -8,14 +8,15 @@ module.exports = {
     publicPath: process.env.NODE_ENV = 'production'
         ? '/portfolio/'
         : '/',
-    // css: {
-    //     loaderOptions: {
-    //         scss: {
-    //             prependData: `
-    //                 @import "@/assets/sass/_variables.scss";
-    //                 @import "@/assets/sass/style.scss";
-    //             `
-    //         }
-    //     }
-    // }
+    css: {
+        loaderOptions: {
+            scss: {
+                additionalData: `
+                    @import "@/assets/scss/style.scss";
+                    @import "@/assets/scss/_variable.scss";
+                    @import "@/assets/scss/_mixins.scss";
+                `
+            }
+        }
+    }
 }

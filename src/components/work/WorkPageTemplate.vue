@@ -85,6 +85,9 @@ export default {
 <style lang="scss">
 .work-page-template {
     padding: 50px 81px; // 50 * 1.618
+    @include respond(tablet) {
+        padding: 50px 0;
+    }
 
     .header {
         .info {
@@ -115,7 +118,7 @@ export default {
     }
 
     .description {
-        width: 800px; // main-visualに合わせる
+        max-width: 800px; // main-visualに合わせる
         margin-top: 36px; // 50 / 1.618 + α
         p {
             &:not(:last-child) {
