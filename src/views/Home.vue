@@ -8,8 +8,8 @@
             <div class="navigation" :style="{marginTop: calcMarginTop}">
                 <nav>
                     <ul>
-                        <li><router-link :to="{name: 'works'}">WORK</router-link></li>
-                        <li><router-link :to="{name: 'profile'}">PROFILE</router-link></li>
+                        <li class="navLink1"><router-link :to="{name: 'works'}">WORK</router-link></li>
+                        <li class="navLink2"><router-link :to="{name: 'profile'}">PROFILE</router-link></li>
                     </ul>
                 </nav>
             </div> 
@@ -38,7 +38,7 @@ export default {
         calcMarginTop() {
             return this.boxSize.height * 0.618 + 'px';
         }
-    }
+    },
 }
 </script>
 
@@ -47,7 +47,6 @@ export default {
     width: 100%;
     height: 100vh;
     position: relative;
-    // background-color: yellow;
 
     .wrapper {
         position: absolute;
@@ -76,16 +75,28 @@ export default {
     .navigation {
         text-align: left;
         font-size: 30px;
+        transform: translateX(-16px); // to align with .last-name
 
         ul {
             li {
                 &:not(:last-child) {
-                    margin-bottom: -13px;
+                    margin-bottom: -8px;
                 }
-                // a {
-                //     color: white;
-                //     font-size: 2.618rem;
-                // }
+
+                a {
+                    display: inline-block;
+                    &::after {
+                        content: '';
+                        display: block;
+                        width: 0;
+                        height: 1px;
+                        background-color: #000;
+                        transition: width .3s;
+                    }
+                    &:hover::after {
+                        width: 100%;
+                    }
+                }
             }
         }
     }
