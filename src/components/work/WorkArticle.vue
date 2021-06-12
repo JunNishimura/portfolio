@@ -1,9 +1,9 @@
 <template>
     <article class="work-article" @click="pageTransit">
         <img :src="imgSrc">
-        <div class="work-title">
-            <h5><span class="title">{{ title }}</span> | <span class="tag">{{ tag }}</span></h5>
-        </div>
+        <div class="overlay" />
+        <h5 class="title">{{ title }}</h5>
+        <h5 class="tag">{{ tag }}</h5>
     </article>
 </template>
 
@@ -33,6 +33,7 @@ export default {
     max-width: 400px;
     margin: 25px 0;
     cursor: pointer;
+    position: relative;
 
     img {
         width: 100%;
@@ -40,16 +41,49 @@ export default {
         vertical-align: bottom;
     }
 
-    .work-title {
-        text-align: right;
+    .overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 0;
+        border-top: 300px solid #fff9;
+        border-right: 100px solid transparent;
+        opacity: 0;
+        transition: .8s;
+        line-height: 150px;
+    }
 
-        .title {
-            // font-weight: 600;
-            font-size: 14px;
+    .title {
+        position: absolute;
+        top: 30px;
+        left: 48px; // 30 * 1.6
+        font-size: 16px;
+    }
+
+    .tag {
+        position: absolute;
+        bottom: 30px;
+        left: 48px; // 30 * 1.6
+        color: #333;
+    }
+
+    .title, .tag {
+        opacity: 0;
+        transition: 0.3s ease-out;
+        transition-delay: 0.5s;
+    }
+
+    &:hover {
+        .overlay {
+            opacity: 1;
+            width: 61.8%;
         }
 
-        .tag {
-            color: #333;
+        .title, .tag {
+            opacity: 1;
         }
     }
 }
