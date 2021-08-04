@@ -13,6 +13,12 @@
                 :tag="'web app'"
                 :pageName="'cometrue'"
             />
+            <work-article
+                :path="'infodesign2/open-ads.jpg'"
+                :title="'情報デザインⅡ 課題'"
+                :tag="'design'"
+                :pageName="'infodesign2'"
+            />
         </div>
     </div>
 </template>
@@ -34,7 +40,15 @@ export default {
         display: flex;
         flex-wrap: wrap;
         align-content: flex-start;
-        justify-content: space-around;
+        justify-content: space-between;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 400px;
+            height: 0;
+            margin: 25px 0;
+        }
     }
 }
 </style>

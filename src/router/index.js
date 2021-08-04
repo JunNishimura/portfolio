@@ -6,6 +6,7 @@ import WorkList from '@/views/WorkList.vue'
 // work pages below
 import WordIsMine from '@/views/work/WordIsMine.vue'
 import ComeTrue from '@/views/work/ComeTrue.vue'
+import InfoDesign2 from '@/views/work/InfoDesign2.vue'
 
 const routes = [
     {
@@ -37,6 +38,11 @@ const routes = [
                 path: 'works/cometrue',
                 name: 'cometrue',
                 component: ComeTrue,
+            },
+            {
+                path: 'works/InfoDesign2',
+                name: 'infodesign2',
+                component: InfoDesign2
             }
         ]
     },
