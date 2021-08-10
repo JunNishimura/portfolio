@@ -1,7 +1,7 @@
 <template>
     <article class="work-article" @click="pageTransit">
-        <img :src="imgSrc">
-        <div class="overlay" />
+        <img :src="imgSrc" ref="topImage">
+        <div class="overlay" :style="{borderTop: borderTop}" />
         <h5 class="title">{{ title }}</h5>
         <h5 class="tag">{{ tag }}</h5>
     </article>
@@ -15,15 +15,30 @@ export default {
         tag: String,
         pageName: String
     },
+    data() {
+        return {
+            imageHeight: 0,
+            isMouted: false,
+        }
+    },
     computed: {
         imgSrc() {
             return require(`@/assets/images/work/${this.path}`); // @は予め書いておく方が良いみたい。@の部分までpropで渡すとエラーになる。
+        },
+        borderTop() {
+            return this.isMouted ? `${this.imageHeight}px solid #fff9` : '300px solid #fff9';
         }
     },
     methods: {
         pageTransit() {
             this.$router.push({ name: this.pageName })
         }
+    },
+    mounted() {
+        setTimeout(() => {
+            this.imageHeight = this.$refs.topImage.height;
+            this.isMouted = true;
+        }, 1000);
     }
 }
 </script>
@@ -37,7 +52,7 @@ export default {
 
     img {
         width: 100%;
-        height: auto;
+        height: 100%;
         vertical-align: bottom;
     }
 

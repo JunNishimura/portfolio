@@ -109,11 +109,19 @@ export default {
         }
 
         img {
-            height: 600px; // w : h = 4 : 3
+            height: auto;
         }
 
         iframe {
             height: 450px; // 800 * 0.5625
+
+            @include respond(table) {
+                height: 427px; // 760 * 0.5625
+            }
+
+            @include respond(phone) {
+                height: 252px; // 448 * 0.5625
+            }
         }
     }
 
