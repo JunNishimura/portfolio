@@ -1,7 +1,13 @@
 <template>
     <div id="word-is-mine">
         <work-page-template
-            :pageInfo="pageInfo"
+            :title="pageInfo.title"
+            :date="pageInfo.date"
+            :place="pageInfo.place"
+            :credit="pageInfo.credit"
+            :links="pageInfo.links"
+            :mainVisualVideo="pageInfo.mainVisualVideo"
+            :galleryVideoUrls="pageInfo.galleryVideoUrls"
         >
             <template #description>
                 <p>これは鑑賞者の選択により再構成された言葉が知らない第三者の発声を通じて公に伝えられるという状況を作りだすことで言葉の所有を問う作品です。</p>
@@ -51,9 +57,7 @@ export default {
                 "https://github.com/JunNishimura/word-is-mine",
                 "https://twitter.com/WORD_IS_MINE_"
             ],
-            mainVisual: {
-                video: "https://www.youtube.com/embed/tlescleq12k"
-            },
+            mainVisualVideo: "https://www.youtube.com/embed/tlescleq12k",
             galleryVideoUrls: [
                 "https://www.youtube.com/embed/FtAwzgAHOc4",
                 "https://www.youtube.com/embed/G5qZR6r-LDk",

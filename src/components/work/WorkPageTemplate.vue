@@ -1,34 +1,34 @@
 <template>
     <div class="work-page-template">
         <div class="header">
-            <h1 class="title">{{ pageInfo.title }}</h1>
+            <h1 class="title">{{ title }}</h1>
             <div class="info">
-                <h5 class="date">{{ pageInfo.date }}</h5>
-                <h5 class="place">{{ pageInfo.place }}</h5>
+                <h5 class="date">{{ date }}</h5>
+                <h5 v-if="place && place.length > 0" class="place">{{ place }}</h5>
             </div>
         </div>
         <div class="main-visual">
-            <div v-if="pageInfo.mainVisual.img"> 
-                <img :src="imgSrc(pageInfo.mainVisual.img)">
+            <div v-if="mainVisualImg && mainVisualImg.length > 0"> 
+                <img :src="imgSrc(mainVisualImg)">
             </div>
-            <div v-if="pageInfo.mainVisual.video">
-                <iframe :src="pageInfo.mainVisual.video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div v-if="mainVisualVideo && mainVisualVideo.length > 0">
+                <iframe :src="mainVisualVideo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
         <div class="description">
             <slot name="description"></slot>
         </div>
-        <div class="credit">
-            <h5 v-for="(name, id) in pageInfo.credit" :key="id">{{name}}</h5>
+        <div class="credit" v-if="credit && credit.length > 0">
+            <h5 v-for="(name, id) in credit" :key="id">{{name}}</h5>
         </div>
-        <div class="references">
-            <div class="ref-item" v-for="(link, id) in pageInfo.links" :key="id">
+        <div class="references" v-if="links && links.length > 0">
+            <div class="ref-item" v-for="(link, id) in links" :key="id">
                 <a :href="link">{{link}}</a>
             </div>
         </div>
         <div class="gallery" ref="galleryRef">
-            <div class="videos" v-if="isMounted">
-                <iframe v-for="(url, id) in pageInfo.galleryVideoUrls" :key="id"
+            <div class="videos" v-if="isMounted && galleryVideoUrls && galleryVideoUrls.length > 0">
+                <iframe v-for="(url, id) in galleryVideoUrls" :key="id"
                     :style="{height: videoHeight}" 
                     :src="url" 
                     title="YouTube video player" 
@@ -48,16 +48,51 @@
 import { computed, onMounted, ref } from '@vue/runtime-core';
 export default {
     props: {
-        pageInfo: {
-            title: String,
-            date: String,
-            place: String,
-            links: Array,
-            mainVisual: {
-                img: String,
-                video: String
-            },
-            galleryVideoUrls: Array
+        title: {
+            type: String,
+            require: true,
+            default: '',
+        },
+        date: {
+            type: String,
+            require: true,
+            default: '',
+        },
+        place: {
+            type: String,
+            require: false,
+            default: '',
+        },
+        credit: {
+            type: Array,
+            require: false,
+            default: () => {
+                return []
+            }
+        },
+        links: {
+            type: Array,
+            require: false,
+            default: () => {
+                return [];
+            }
+        },
+        mainVisualImg: {
+            type: String,
+            require: false,
+            default: ''
+        },
+        mainVisualVideo: {
+            type: String,
+            require: false,
+            default: ''
+        },
+        galleryVideoUrls: {
+            type: Array,
+            require: false,
+            default: () => {
+                return [];
+            }
         }
     },
     setup() {
