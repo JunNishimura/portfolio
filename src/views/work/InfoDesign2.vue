@@ -22,15 +22,15 @@ export default {
     components: {
         WorkPageTemplate
     },
-    data() {
-        return {
-            pageInfo: {
-                title: "情報デザインⅡ　授業課題",
-                date: "2021.4 - 2021.7",
-                credit: [],
-                mainVisual: {}
-            }
-        }
+    setup() {
+        const pageInfo = {
+            title: "情報デザインⅡ　授業課題",
+            date: "2021.4 - 2021.7",
+            credit: [],
+            mainVisual: {}
+        };
+
+        return { pageInfo };
     }
 }
 </script>
