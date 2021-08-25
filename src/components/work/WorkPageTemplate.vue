@@ -26,7 +26,7 @@
                 <a :href="link">{{link}}</a>
             </div>
         </div>
-        <div class="gallery" ref="gallery">
+        <div class="gallery" ref="galleryRef">
             <div class="videos" v-if="isMounted">
                 <iframe v-for="(url, id) in pageInfo.galleryVideoUrls" :key="id"
                     :style="{height: videoHeight}" 
@@ -45,6 +45,7 @@
 </template>
 
 <script>
+import { computed, onMounted, ref } from '@vue/runtime-core';
 export default {
     props: {
         pageInfo: {
@@ -59,25 +60,25 @@ export default {
             galleryVideoUrls: Array
         }
     },
-    data() {
-        return {
-            galleryWidth: 0,
-            isMounted: false,
-        }
-    },
-    computed: {
-        videoHeight() {
-            return this.isMounted ? this.galleryWidth * 0.5625 + 'px' : '400px';
-        }
-    },
-    mounted() {
-        this.galleryWidth = this.$refs.gallery.clientWidth;
-        this.isMounted = true;
-    },
-    methods: {
-        imgSrc(fileName) {
+    setup() {
+        const galleryRef = ref(null);
+        const galleryWidth = ref(0);
+        const isMounted = ref(false);
+
+        const videoHeight = computed(() => {
+            return isMounted.value ? galleryWidth.value * 0.5625 + 'px' : '400px';
+        });
+
+        const imgSrc = (fileName) => {
             return require(`@/assets/images/${fileName}`)
         }
+
+        onMounted(() => {
+            galleryWidth.value = galleryRef.value.clientWidth;
+            isMounted.value = true;
+        });
+
+        return { galleryRef, galleryWidth, isMounted, videoHeight, imgSrc }
     }
 }
 </script>

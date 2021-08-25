@@ -1,7 +1,7 @@
 <template>
     <div class="home" >
         <div class="wrapper" :style="{marginTop: calcMarginTop, marginLeft: calcMarginLeft}">
-            <div class="home-title" ref="homeTitle">
+            <div class="home-title" ref="homeTitleRef">
                 <h1 class="first-name">JUN<span class="first-name__line"></span></h1>
                 <h1 class="last-name">NISHIMURA</h1>
             </div>
@@ -18,26 +18,27 @@
 </template>
 
 <script>
+import { computed, onMounted, ref } from '@vue/runtime-core';
+
 export default {
-    data() {
-        return {
-            boxSize: {
-                width: 0,
-                height: 0,
-            }
-        }
-    },
-    mounted() {
-        this.boxSize.width = this.$refs.homeTitle.clientWidth;
-        this.boxSize.height = this.$refs.homeTitle.clientHeight;
-    },
-    computed: {
-        calcMarginLeft() {
-            return this.boxSize.width * 0.618 + 'px';
-        },
-        calcMarginTop() {
-            return this.boxSize.height * 0.618 + 'px';
-        }
+    setup() {
+        const homeTitleRef = ref(null);
+        const boxSize = ref({ width: 0, height: 0 });
+
+        const calcMarginLeft = computed(() => {
+            return boxSize.value.width * 0.618 + 'px'
+        });
+
+        const calcMarginTop = computed(() => {
+            return boxSize.value.height * 0.618 + 'px';
+        });
+
+        onMounted(() => {
+            boxSize.value.width = homeTitleRef.value.clientWidth;
+            boxSize.value.height = homeTitleRef.value.clientHeight;
+        });
+
+        return { homeTitleRef, boxSize, calcMarginLeft, calcMarginTop };
     },
 }
 </script>

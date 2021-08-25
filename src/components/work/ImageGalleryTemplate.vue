@@ -26,10 +26,12 @@ export default {
             imageC: String,
         }
     },
-    methods: {
-        imgSrc(fileName) {
+    setup() {
+        const imgSrc = (fileName) => {
             return require(`@/assets/images/${fileName}`)
-        }
+        };
+
+        return { imgSrc };
     }
 }
 </script>
