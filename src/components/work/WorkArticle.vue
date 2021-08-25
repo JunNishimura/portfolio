@@ -1,6 +1,6 @@
 <template>
     <article class="work-article" @click="pageTransit">
-        <img :src="imgSrc" ref="topImage">
+        <img :src="imgSrc" ref="topImageRef">
         <div class="overlay" :style="{borderTop: borderTop}" />
         <h5 class="title">{{ title }}</h5>
         <h5 class="tag">{{ tag }}</h5>
@@ -8,6 +8,9 @@
 </template>
 
 <script>
+import { ref } from '@vue/reactivity';
+import { computed, onMounted } from '@vue/runtime-core';
+import { useRouter } from 'vue-router';
 export default {
     props: {
         path: String, 
@@ -15,30 +18,32 @@ export default {
         tag: String,
         pageName: String
     },
-    data() {
-        return {
-            imageHeight: 0,
-            isMouted: false,
-        }
-    },
-    computed: {
-        imgSrc() {
-            return require(`@/assets/images/work/${this.path}`); // @は予め書いておく方が良いみたい。@の部分までpropで渡すとエラーになる。
-        },
-        borderTop() {
-            return this.isMouted ? `${this.imageHeight}px solid #fff9` : '300px solid #fff9';
-        }
-    },
-    methods: {
-        pageTransit() {
-            this.$router.push({ name: this.pageName })
-        }
-    },
-    mounted() {
-        setTimeout(() => {
-            this.imageHeight = this.$refs.topImage.height;
-            this.isMouted = true;
-        }, 1000);
+    setup(props) {
+        const topImageRef = ref(null);
+        const imageHeight = ref(0);
+        const isMounted = ref(false);
+        const router = useRouter();
+
+        const imgSrc = computed(() => {
+            return require(`@/assets/images/work/${props.path}`); // @は予め書いておく方が良いみたい。@の部分までpropで渡すとエラーになる。
+        });
+
+        const borderTop = computed(() => {
+            return isMounted.value ? `${imageHeight.value}px solid #fff9` : '300px solid #fff9';
+        });
+
+        const pageTransit = () => {
+            router.push({ name: props.pageName });
+        };
+
+        onMounted(() => {
+            setTimeout(() => {
+                imageHeight.value = topImageRef.value.height;
+                isMounted.value = true;
+            }, 1000);
+        });
+
+        return { topImageRef, imageHeight, isMounted, imgSrc, borderTop, pageTransit };
     }
 }
 </script>
