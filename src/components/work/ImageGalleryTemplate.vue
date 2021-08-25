@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import { computed } from '@vue/runtime-core'
 export default {
     props: {
         imagePaths1: {
@@ -28,10 +27,10 @@ export default {
         }
     },
     setup() {
-        const imgSrc = computed((fileName) => {
+        const imgSrc = (fileName) => {
             return require(`@/assets/images/${fileName}`)
-        });
-        
+        };
+
         return { imgSrc };
     }
 }
