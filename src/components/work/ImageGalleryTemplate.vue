@@ -1,14 +1,14 @@
 <template>
     <!-- image gallery template which display 6 images -->
     <div class="image-gallery-template1">
-        <div class="area-a"><img :src=imgSrc(imagePaths1.imageA)></div>
-        <div class="area-b"><img :src=imgSrc(imagePaths1.imageB)></div>
-        <div class="area-c"><img :src=imgSrc(imagePaths1.imageC)></div>
+        <div class="area-a"><img :src="imgSrc(imagePaths1.imageA)"></div>
+        <div class="area-b"><img :src="imgSrc(imagePaths1.imageB)"></div>
+        <div class="area-c"><img :src="imgSrc(imagePaths1.imageC)"></div>
     </div>
     <div class="image-gallery-template2">
-        <div class="area-a"><img :src=imgSrc(imagePaths2.imageA)></div>
-        <div class="area-b"><img :src=imgSrc(imagePaths2.imageB)></div>
-        <div class="area-c"><img :src=imgSrc(imagePaths2.imageC)></div>
+        <div class="area-a"><img :src="imgSrc(imagePaths2.imageA)"></div>
+        <div class="area-b"><img :src="imgSrc(imagePaths2.imageB)"></div>
+        <div class="area-c"><img :src="imgSrc(imagePaths2.imageC)"></div>
     </div>
 </template>
 
@@ -16,14 +16,24 @@
 export default {
     props: {
         imagePaths1: {
-            imageA: String,
-            imageB: String,
-            imageC: String, 
+            type: Object,
+            default: () => {
+                return {
+                    imageA: '',
+                    imageB: '',
+                    imageC: '', 
+                }
+            }
         },
         imagePaths2: {
-            imageA: String,
-            imageB: String,
-            imageC: String,
+            type: Object,
+            default: () => {
+                return {
+                    imageA: '',
+                    imageB: '',
+                    imageC: '', 
+                }
+            }
         }
     },
     setup() {
