@@ -34,46 +34,47 @@ export default {
         WorkPageTemplate,
         ImageGalleryTemplate
     },
-    data() {
-        return {
-            pageInfo: {
-                title: "WORD IS MINE",
-                date: "2020.12 - 2021.1",
-                place: "@筑波大学6A棟",
-                descriptions: [
-                ],
-                credit: [
-                    "岡本 太玖斗",
-                    "胡 越",
-                    "近藤 聡一朗",
-                    "西村 純",
-                ],
-                links: [
-                    "https://github.com/JunNishimura/word-is-mine",
-                    "https://twitter.com/WORD_IS_MINE_"
-                ],
-                mainVisual: {
-                    video: "https://www.youtube.com/embed/tlescleq12k"
-                },
-                galleryVideoUrls: [
-                    "https://www.youtube.com/embed/FtAwzgAHOc4",
-                    "https://www.youtube.com/embed/G5qZR6r-LDk",
-                    "https://www.youtube.com/embed/svFS7zr6jAA"
-                ]
+    setup() {
+        const pageInfo = {
+            title: "WORD IS MINE",
+            date: "2020.12 - 2021.1",
+            place: "@筑波大学6A棟",
+            descriptions: [
+            ],
+            credit: [
+                "岡本 太玖斗",
+                "胡 越",
+                "近藤 聡一朗",
+                "西村 純",
+            ],
+            links: [
+                "https://github.com/JunNishimura/word-is-mine",
+                "https://twitter.com/WORD_IS_MINE_"
+            ],
+            mainVisual: {
+                video: "https://www.youtube.com/embed/tlescleq12k"
             },
-            imagePaths: {
-                imagePaths1: {
-                    imageA: "work/word-is-mine/P2051593.jpg",
-                    imageB: "work/word-is-mine/P2051604.jpg",
-                    imageC: "work/word-is-mine/P2051618.jpg",
-                },
-                imagePaths2: {
-                    imageA: "work/word-is-mine/P2051585.jpg",
-                    imageB: "work/word-is-mine/P2051583.jpg",
-                    imageC: "work/word-is-mine/P2051592.jpg"
-                }
+            galleryVideoUrls: [
+                "https://www.youtube.com/embed/FtAwzgAHOc4",
+                "https://www.youtube.com/embed/G5qZR6r-LDk",
+                "https://www.youtube.com/embed/svFS7zr6jAA"
+            ]
+        };
+
+        const imagePaths = {
+            imagePaths1: {
+                imageA: "work/word-is-mine/P2051593.jpg",
+                imageB: "work/word-is-mine/P2051604.jpg",
+                imageC: "work/word-is-mine/P2051618.jpg",
+            },
+            imagePaths2: {
+                imageA: "work/word-is-mine/P2051585.jpg",
+                imageB: "work/word-is-mine/P2051583.jpg",
+                imageC: "work/word-is-mine/P2051592.jpg"
             }
-        }
-    },
+        };
+
+        return { pageInfo, imagePaths };
+    }
 }
 </script>
