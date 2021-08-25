@@ -1,7 +1,8 @@
 <template>
     <div id="cometrue">
         <work-page-template
-            :pageInfo="pageInfo"
+            :title="pageInfo.title"
+            :date="pageInfo.date"
         >
             <template #description>
                 <p>筑波大学情報学群情報メディア創成学類開講の情報デザインⅡ（授業コード：GC52801）における制作物です。雑誌の表紙、ポスター、雑誌の見開き広告の3点を制作しました。制作物では実在する雑誌や商品を取り扱いましたが、該当する企業や商品には一切関係がない点をご了承下さい。</p>
@@ -26,8 +27,6 @@ export default {
         const pageInfo = {
             title: "情報デザインⅡ　授業課題",
             date: "2021.4 - 2021.7",
-            credit: [],
-            mainVisual: {}
         };
 
         return { pageInfo };

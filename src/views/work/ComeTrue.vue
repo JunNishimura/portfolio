@@ -1,7 +1,11 @@
 <template>
     <div id="cometrue">
         <work-page-template
-            :pageInfo="pageInfo"
+            :title="pageInfo.title"
+            :date="pageInfo.date"
+            :credit="pageInfo.credit"
+            :links="pageInfo.links"
+            :mainVisualImg="pageInfo.mainVisualImg"
         >
             <template #description>
                 <p>カムトルはアイデアを持っているけど必要なスキルを持った人材と出会えないために行動に移せない人と、スキルを持っているけどそれを活かす場所がない人が出会える場所を提供する事を目指して作ったwebサービスです。英語で実現するを意味するcome trueからカムトルという名前にしました。</p>
@@ -31,9 +35,7 @@ export default {
                 "https://cometrue-6fd0b.web.app/",
                 "https://github.com/JunNishimura/cometoru"
             ],
-            mainVisual: {
-                img: "work/cometrue/home.png"
-            }
+            mainVisualImg: "work/cometrue/home.png"
         };
 
         return { pageInfo };
