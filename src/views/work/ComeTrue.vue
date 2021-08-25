@@ -18,25 +18,25 @@ export default {
     components: {
         WorkPageTemplate
     },
-    data() {
-        return {
-            pageInfo: {
-                title: "カムトル",
-                date: "2020.9 - 2020.12",
-                credit: [
-                    "西村 純",
-                    "高山 尚哉",
-                    "神野 亮太"
-                ],
-                links: [
-                    "https://cometrue-6fd0b.web.app/",
-                    "https://github.com/JunNishimura/cometoru"
-                ],
-                mainVisual: {
-                    img: "work/cometrue/home.png"
-                }
+    setup() {
+        const pageInfo = {
+            title: "カムトル",
+            date: "2020.9 - 2020.12",
+            credit: [
+                "西村 純",
+                "高山 尚哉",
+                "神野 亮太"
+            ],
+            links: [
+                "https://cometrue-6fd0b.web.app/",
+                "https://github.com/JunNishimura/cometoru"
+            ],
+            mainVisual: {
+                img: "work/cometrue/home.png"
             }
-        }
+        };
+
+        return { pageInfo };
     }
 }
 </script>
