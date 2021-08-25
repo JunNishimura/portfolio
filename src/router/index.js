@@ -15,12 +15,12 @@ const routes = [
         component: Home
     },
     {
-        path: '/',
+        path: '/jn',
         name: 'pagebase',
         component: PageBase,
         children: [
             {
-                path: '/profile',
+                path: 'profile',
                 name: 'profile',
                 component: Profile
             },
