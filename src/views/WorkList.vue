@@ -2,6 +2,12 @@
     <div id="work">
         <div class="gallery">
             <work-article
+                :path="'hotoke-to-watashi/top.jpg'"
+                :title="'仏と私、時々通知。'"
+                :tag="'art'"
+                :pageName="'hotoke-to-watashi'"
+            />
+            <work-article
                 :path="'nuink/top.png'"
                 :title="'Nu ink. TIG2021'"
                 :tag="'web'"

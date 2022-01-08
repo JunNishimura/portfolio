@@ -1,5 +1,5 @@
 <template>
-    <div id="cometrue">
+    <div id="info-design2">
         <work-page-template
             :title="pageInfo.title"
             :date="pageInfo.date"

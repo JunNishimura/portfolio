@@ -8,6 +8,7 @@ import WordIsMine from '@/views/work/WordIsMine.vue'
 import ComeTrue from '@/views/work/ComeTrue.vue'
 import InfoDesign2 from '@/views/work/InfoDesign2.vue'
 import Nuink from '@/views/work/Nuink.vue'
+import HotokeToWatashi from '@/views/work/HotokeToWatashi.vue'
 
 const routes = [
     {
@@ -49,6 +50,11 @@ const routes = [
                 path: 'works/Nuink',
                 name: 'nuink',
                 component: Nuink
+            },
+            {
+                path: 'works/HotokeToWatashi',
+                name: 'hotoke-to-watashi',
+                component: HotokeToWatashi
             }
         ]
     },
