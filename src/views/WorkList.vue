@@ -2,6 +2,12 @@
     <div id="work">
         <div class="gallery">
             <work-article
+                :path="'nuink/top.png'"
+                :title="'Nu ink. TIG2021'"
+                :tag="'web'"
+                :pageName="'nuink'"
+            />
+            <work-article
                 :path="'word-is-mine/P2051574.jpg'"
                 :title="'WORD IS MINE'"
                 :tag="'art'"
@@ -10,7 +16,7 @@
             <work-article
                 :path="'cometrue/home.png'"
                 :title="'カムトル'"
-                :tag="'web app'"
+                :tag="'web'"
                 :pageName="'cometrue'"
             />
             <work-article

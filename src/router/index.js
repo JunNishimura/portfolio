@@ -7,6 +7,7 @@ import WorkList from '@/views/WorkList.vue'
 import WordIsMine from '@/views/work/WordIsMine.vue'
 import ComeTrue from '@/views/work/ComeTrue.vue'
 import InfoDesign2 from '@/views/work/InfoDesign2.vue'
+import Nuink from '@/views/work/Nuink.vue'
 
 const routes = [
     {
@@ -43,6 +44,11 @@ const routes = [
                 path: 'works/InfoDesign2',
                 name: 'infodesign2',
                 component: InfoDesign2
+            },
+            {
+                path: 'works/Nuink',
+                name: 'nuink',
+                component: Nuink
             }
         ]
     },
