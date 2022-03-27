@@ -9,6 +9,7 @@ import ComeTrue from '@/views/work/ComeTrue.vue'
 import InfoDesign2 from '@/views/work/InfoDesign2.vue'
 import Nuink from '@/views/work/Nuink.vue'
 import HotokeToWatashi from '@/views/work/HotokeToWatashi.vue'
+import Jitan from '@/views/work/Jitan.vue'
 
 const routes = [
     {
@@ -47,15 +48,20 @@ const routes = [
                 component: InfoDesign2
             },
             {
-                path: 'works/Nuink',
-                name: 'nuink',
-                component: Nuink
+                path: 'works/Jitan',
+                name: 'jitan',
+                component: Jitan
             },
             {
                 path: 'works/HotokeToWatashi',
                 name: 'hotoke-to-watashi',
                 component: HotokeToWatashi
-            }
+            },
+            {
+                path: 'works/Nuink',
+                name: 'nuink',
+                component: Nuink
+            },
         ]
     },
 ]
