@@ -14,6 +14,23 @@
                 <div class="interest">
                     <p>I'm interested in Natural Language Processing.<br>I use deep learning to generate Japanese poem in my current research.<br>I love design and art as well.</p>
                 </div>
+                <div class="work-experience">
+                    <div class="work-experience__header">
+                        <p>[Work Experience]</p>
+                    </div>
+                    <div class="work-experience__content">
+                        <work-experience-item
+                            companyName="note株式会社 エンジニアインターン"
+                            duration="2021.9 - Now"
+                            detail="Frontend(Nuxt.js, TypeScript) / Backend(ruby on rails)"
+                        />
+                        <work-experience-item
+                            companyName="奈良先端科学技術大学院大学 研究室インターン"
+                            duration="2021.8"
+                            detail="research intern at Watanabe lab"
+                        />
+                    </div>
+                </div>
                 <div class="contacts">
                     <p>I love to make cool things together with friends.<br>Please contact me if you're interested.</p>
                     <div class="sns">
@@ -27,7 +44,11 @@
 </template>
 
 <script>
+import WorkExperienceItem from "@/components/profile/WorkExperienceItem.vue"
 export default {
+    components: {
+        WorkExperienceItem
+    }
 }
 </script>
 
@@ -75,6 +96,14 @@ $text-secondary-color: #555;
 
         .interest {
             margin-top: 22px; // 36 / 1.618
+        }
+
+        .work-experience {
+            &__header {
+                margin: 36px 0 6px;
+                p {
+                }
+            }
         }
 
         .contacts {
