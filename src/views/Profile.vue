@@ -14,6 +14,13 @@
                 <div class="interest">
                     <p>I'm interested in Natural Language Processing.<br>I use deep learning to generate Japanese poem in my current research.<br>I love design and art as well.</p>
                 </div>
+                <div class="contacts">
+                    <p>I love to make cool things together with friends.<br>Please contact me if you're interested.</p>
+                    <div class="sns">
+                        <a href="https://www.facebook.com/jun.nishimura.3958"><font-awesome-icon :icon="['fab', 'facebook-square']" size="2x" :style="{ color: '#4267B2' }" /></a>
+                        <a href="https://www.instagram.com/jundayo0303/"><font-awesome-icon class="instagram-icon" :icon="['fab', 'instagram-square']" size="2x"  /></a>
+                    </div>
+                </div>
                 <div class="work-experience">
                     <div class="work-experience__header">
                         <p>[Work Experience]</p>
@@ -26,16 +33,9 @@
                         />
                         <work-experience-item
                             companyName="奈良先端科学技術大学院大学 研究室インターン"
-                            duration="2021.8"
+                            duration="2021.9"
                             detail="research intern at Watanabe lab"
                         />
-                    </div>
-                </div>
-                <div class="contacts">
-                    <p>I love to make cool things together with friends.<br>Please contact me if you're interested.</p>
-                    <div class="sns">
-                        <a href="https://www.facebook.com/jun.nishimura.3958"><font-awesome-icon :icon="['fab', 'facebook-square']" size="2x" :style="{ color: '#4267B2' }" /></a>
-                        <a href="https://www.instagram.com/jundayo0303/"><font-awesome-icon class="instagram-icon" :icon="['fab', 'instagram-square']" size="2x"  /></a>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@ export default {
 $text-secondary-color: #555;
 
 .profile {
-    padding-top: 50px;
+    padding: 50px 0;
     padding-left: 81px; // 50 * 1.618
     display: flex;
     justify-content: flex-start;
