@@ -10,6 +10,7 @@ import InfoDesign2 from '@/views/work/InfoDesign2.vue'
 import Nuink from '@/views/work/Nuink.vue'
 import HotokeToWatashi from '@/views/work/HotokeToWatashi.vue'
 import Jitan from '@/views/work/Jitan.vue'
+import ARCreator from '@/views/work/ARCreator.vue'
 
 const routes = [
     {
@@ -56,6 +57,11 @@ const routes = [
                 path: 'works/HotokeToWatashi',
                 name: 'hotoke-to-watashi',
                 component: HotokeToWatashi
+            },
+            {
+                path: 'works/ARCreator',
+                name: 'ar-creator',
+                component: ARCreator
             },
             {
                 path: 'works/Nuink',

@@ -8,6 +8,12 @@
                 :pageName="'nuink'"
             />
             <work-article
+                :path="'ar-creator/top.jpg'"
+                :title="'ARクリエイター特区'"
+                :tag="'企画'"
+                :pageName="'ar-creator'"
+            />
+            <work-article
                 :path="'hotoke-to-watashi/top.jpg'"
                 :title="'仏と私、時々通知。'"
                 :tag="'art'"
