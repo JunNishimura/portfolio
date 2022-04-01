@@ -1,5 +1,5 @@
 <template>
-    <div id="hotoke-to-watashi">
+    <div id="jitan">
         <work-page-template
             :title="pageInfo.title"
             :date="pageInfo.date"
