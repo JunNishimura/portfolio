@@ -12,7 +12,7 @@
                     <p>I'm a college student, living in Japan.</p>
                 </div>
                 <div class="interest">
-                    <p>I'm interested in Natural Language Processing.<br>I use deep learning to generate Japanese poem in my current research.<br>I love design and art as well.</p>
+                    <p>I'm interested in AR / VR / CG.<br>My current research is Fireworks Physics Simulation.<br>I love design and art as well.</p>
                 </div>
                 <div class="contacts">
                     <p>I love to make cool things together with friends.<br>Please contact me if you're interested.</p>
@@ -29,12 +29,12 @@
                         <work-experience-item
                             companyName="note株式会社 エンジニアインターン"
                             duration="2021.9 - Now"
-                            detail="Frontend(Nuxt.js, TypeScript) / Backend(ruby on rails)"
+                            detail="I work as a full-stack engineer. I use Nuxt.js and TypeScript for the frontend,  ruby on rails for the backend."
                         />
                         <work-experience-item
                             companyName="奈良先端科学技術大学院大学 研究室インターン"
-                            duration="2021.9"
-                            detail="research intern at Watanabe lab"
+                            duration="2021.8"
+                            detail="I worked at Watanabe lab. I implemented Renga System by using Transformer model."
                         />
                     </div>
                 </div>
