@@ -8,6 +8,12 @@
                 :pageName="'nuink'"
             />
             <work-article
+                :path="'innofes/top.png'"
+                :title="'イノフェス2021 トークセッション'"
+                :tag="'企画'"
+                :pageName="'innofes'"
+            />
+            <work-article
                 :path="'ar-creator/top.jpg'"
                 :title="'ARクリエイター特区'"
                 :tag="'企画'"

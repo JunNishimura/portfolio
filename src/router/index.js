@@ -11,6 +11,7 @@ import Nuink from '@/views/work/Nuink.vue'
 import HotokeToWatashi from '@/views/work/HotokeToWatashi.vue'
 import Jitan from '@/views/work/Jitan.vue'
 import ARCreator from '@/views/work/ARCreator.vue'
+import Innofes from '@/views/work/Innofes.vue'
 
 const routes = [
     {
@@ -68,6 +69,11 @@ const routes = [
                 name: 'nuink',
                 component: Nuink
             },
+            {
+                path: 'works/Innofes',
+                name: 'innofes',
+                component: Innofes
+            }
         ]
     },
 ]
