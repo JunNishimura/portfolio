@@ -12,6 +12,7 @@ import HotokeToWatashi from '@/views/work/HotokeToWatashi.vue'
 import Jitan from '@/views/work/Jitan.vue'
 import ARCreator from '@/views/work/ARCreator.vue'
 import Innofes from '@/views/work/Innofes.vue'
+import KikakuList from '@/views/work/KikakuList.vue'
 
 const routes = [
     {
@@ -73,6 +74,11 @@ const routes = [
                 path: 'works/Innofes',
                 name: 'innofes',
                 component: Innofes
+            },
+            {
+                path: 'works/KikakuList',
+                name: 'kikaku-list',
+                component: KikakuList
             }
         ]
     },

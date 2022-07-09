@@ -8,6 +8,12 @@
                 :pageName="'nuink'"
             />
             <work-article
+                :path="'kikaku-list/top.jpg'"
+                :title="'企画・アイデア集'"
+                :tag="'企画'"
+                :pageName="'kikaku-list'"
+            />
+            <work-article
                 :path="'innofes/top.png'"
                 :title="'イノフェス2021 トークセッション'"
                 :tag="'企画'"
