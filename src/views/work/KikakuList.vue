@@ -10,8 +10,8 @@
             <template #description>
                 <p>身の回りのあらゆるものを面白がろうと思い始めた企画です。</p>
                 <p>単にアイデアを羅列しているのではなく、ターゲットは誰で、どこに企画としての面白さがあるのかまで書くことを意識しました。</p>
-                <iframe  src="/pdf/kikaku.pdf" type="application/pdf">
-                    <p><b>表示されない時の表示</b>: <a href="/pdf/kikaku.pdf">PDF をダウンロード</a>.</p>
+                <iframe :src="pdfPath" type="application/pdf">
+                    <p><b>表示されない時の表示</b>: <a :href="pdfPath">PDF をダウンロード</a>.</p>
                 </iframe >
             </template>
         </work-page-template>
@@ -35,7 +35,10 @@ export default {
             mainVisualImg: ""
         };
 
-        return { pageInfo };
+        const publicPath = process.env.NODE_ENV === 'production' ? '/portfolio' : ''
+        const pdfPath = publicPath + '/pdf/kikaku.pdf'
+
+        return { pageInfo, pdfPath };
     }
 }
 </script>
